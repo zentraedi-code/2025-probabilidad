@@ -1,4 +1,3 @@
-:stylesheet: daro-dark.css
 :toc: left
 :toclevels: 4
 :toc-title: Lógica computacional
