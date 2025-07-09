@@ -1,0 +1,43 @@
+name: build adocs
+
+on:
+  push:
+    branches:
+    - main
+  workflow_dispatch:
+permissions:
+  id-token: write
+  contents: read
+  pages: write
+    
+jobs:
+  build:
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    name: asciidoctor
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Get build container
+      id: build
+      uses: tonynv/asciidoctor-action@master
+      with:
+          program: "asciidoctor ./resumen.adoc"
+    - name: Print execution time
+      run: echo "Time ${{ steps.adocbuild.outputs.time }}"
+    - name: Print hola
+      run: echo "hola"
+    - name: Print dir
+      run: echo "URL:${{ steps.deployment.outputs.page_url }}"
+    - name: Print url
+      run: ls
+    - name: Upload static files as artifact
+      id: deployment
+      uses: actions/upload-pages-artifact@v3
+      with:
+        # Upload entire repository
+        path: '.'
+    - name: Deploy to GitHub Pages
+      id: pages_deployment
+      uses: actions/deploy-pages@v4
