@@ -1,1 +1,13 @@
-HOLA!!!
+:stylesheet: daro-dark.css
+:toc: left
+:toclevels: 4
+:toc-title: Lógica computacional
+:imagesdir: ./images
+:stem: 
+
+= Probabilidad
+
+== Semana 1
+
+=== Argumento 
+
