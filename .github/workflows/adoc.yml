@@ -32,12 +32,3 @@ jobs:
       run: echo "URL:${{ steps.deployment.outputs.page_url }}"
     - name: Print url
       run: ls
-    - name: Upload static files as artifact
-      id: deployment
-      uses: actions/upload-pages-artifact@v3
-      with:
-        # Upload entire repository
-        path: '.'
-    - name: Deploy to GitHub Pages
-      id: pages_deployment
-      uses: actions/deploy-pages@v4
