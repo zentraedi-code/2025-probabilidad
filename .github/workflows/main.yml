@@ -1,13 +1,23 @@
-name: build adocs
+name: ADOC to Github Convert
 
 on:
   push:
     branches:
-    - main
+      - development
+    paths:
+      - 'documentation/**/*.adoc'
+      - '.github/workflows/asciidoc.yml'
+  workflow_dispatch:
+
 jobs:
-  build:
+  adoc_build:
     runs-on: ubuntu-latest
-    name: asciidoctor
+    timeout-minutes: 20
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
+    name: adoc for github
     steps:
-    - name: Print hola
-      run: echo "hola"
+      - name: print hola
+        run: echo "hola"
