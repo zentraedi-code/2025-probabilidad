@@ -9,5 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     name: asciidoctor
     steps:
-    - name: Print dir
+    - name: Print directory
       run: ls
