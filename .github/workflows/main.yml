@@ -1,0 +1,13 @@
+name: build adocs
+
+on:
+  push:
+    branches:
+    - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: asciidoctor
+    steps:
+    - name: Print hola
+      run: echo "hola"
