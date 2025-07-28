@@ -28,7 +28,8 @@ jobs:
       - name: Convert .adoc to .html
         run: |
           mkdir output
-          asciidoctor -o output/index.html docs/archivo.adoc
+          asciidoctor -o output/index.html docs/resumen.adoc
+          cp daro-dark.css output/daro-dark.css
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
