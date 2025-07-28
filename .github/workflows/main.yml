@@ -28,7 +28,7 @@ jobs:
       - name: Convert .adoc to .html
         run: |
           mkdir output
-          asciidoctor -o output/resumen.html ./resumen.adoc
+          asciidoctor -o output/index.html ./resumen.adoc
           cp ./daro-dark.css output/daro-dark.css
 
       - name: Deploy to GitHub Pages
