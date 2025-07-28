@@ -3,6 +3,7 @@
 :toc-title: Lógica computacional
 :imagesdir: ./images
 :stem: 
+:stylesheet: daro-dark.css
 
 = Probabilidad
 
